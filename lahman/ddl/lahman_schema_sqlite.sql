@@ -12,7 +12,7 @@ CREATE TABLE "AllstarFull" (
 	"GP" int4,
 	"startingPos" int4,
 	PRIMARY KEY ("playerID", "yearID", "gameNum")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Appearances
@@ -41,7 +41,7 @@ CREATE TABLE "Appearances" (
 	"G_ph" int4,
 	"G_pr" int4,
 	PRIMARY KEY ("yearID", "teamID", "playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for AwardsManagers
@@ -55,7 +55,7 @@ CREATE TABLE "AwardsManagers" (
 	"tie" varchar(1),
 	"notes" varchar(100),
 	PRIMARY KEY ("yearID", "awardID", "lgID", "playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for AwardsPlayers
@@ -69,7 +69,7 @@ CREATE TABLE "AwardsPlayers" (
 	"tie" varchar(1),
 	"notes" varchar(100),
 	PRIMARY KEY ("yearID", "awardID", "lgID", "playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for AwardsShareManagers
@@ -84,7 +84,7 @@ CREATE TABLE "AwardsShareManagers" (
 	"pointsMax" int4,
 	"votesFirst" int4,
 	PRIMARY KEY ("awardID", "yearID", "lgID", "playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for AwardsSharePlayers
@@ -99,7 +99,7 @@ CREATE TABLE "AwardsSharePlayers" (
 	"pointsMax" int4,
 	"votesFirst" float8,
 	PRIMARY KEY ("awardID", "yearID", "lgID", "playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Batting
@@ -129,7 +129,7 @@ CREATE TABLE "Batting" (
 	"SF" int4,
 	"GIDP" int4,
 	PRIMARY KEY ("playerID", "yearID", "stint")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for BattingPost
@@ -159,7 +159,7 @@ CREATE TABLE "BattingPost" (
 	"SF" int4,
 	"GIDP" int4,
 	PRIMARY KEY ("yearID", "round", "playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for CollegePlaying
@@ -168,8 +168,9 @@ DROP TABLE IF EXISTS "CollegePlaying";
 CREATE TABLE "CollegePlaying" (
 	"playerID" varchar(9),
 	"schoolID" varchar(15),
-	"yearID" int4
-);
+	"yearID" int4,
+	PRIMARY KEY ("playerID", "schoolID", "yearID")
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Fielding
@@ -195,7 +196,7 @@ CREATE TABLE "Fielding" (
 	"CS" int4,
 	"ZR" float8,
 	PRIMARY KEY ("playerID", "yearID", "stint", "POS")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for FieldingOF
@@ -209,7 +210,7 @@ CREATE TABLE "FieldingOF" (
 	"Gcf" int4,
 	"Grf" int4,
 	PRIMARY KEY ("playerID", "yearID", "stint")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for FieldingPost
@@ -234,7 +235,7 @@ CREATE TABLE "FieldingPost" (
 	"SB" int4,
 	"CS" int4,
 	PRIMARY KEY ("playerID", "yearID", "round", "POS")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for HallOfFame
@@ -251,7 +252,7 @@ CREATE TABLE "HallOfFame" (
 	"category" varchar(20),
 	"needed_note" varchar(25),
 	PRIMARY KEY ("playerID", "yearid", "votedBy")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Managers
@@ -269,7 +270,7 @@ CREATE TABLE "Managers" (
 	"rank" int4,
 	"plyrMgr" varchar(1),
 	PRIMARY KEY ("yearID", "teamID", "inseason")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for ManagersHalf
@@ -287,7 +288,7 @@ CREATE TABLE "ManagersHalf" (
 	"L" int4,
 	"rank" int4,
 	PRIMARY KEY ("yearID", "teamID", "playerID", "half")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Master
@@ -319,7 +320,7 @@ CREATE TABLE "Master" (
 	"retroID" varchar(9),
 	"bbrefID" varchar(9),
 	PRIMARY KEY ("playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Pitching
@@ -357,7 +358,7 @@ CREATE TABLE "Pitching" (
 	"SF" int4,
 	"GIDP" int4,
 	PRIMARY KEY ("playerID", "yearID", "stint")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for PitchingPost
@@ -395,7 +396,7 @@ CREATE TABLE "PitchingPost" (
 	"SF" int4,
 	"GIDP" ,
 	PRIMARY KEY ("playerID", "yearID", "round")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Salaries
@@ -408,7 +409,7 @@ CREATE TABLE "Salaries" (
 	"playerID" varchar(9) NOT NULL,
 	"salary" float8,
 	PRIMARY KEY ("yearID", "teamID", "lgID", "playerID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Schools
@@ -421,7 +422,7 @@ CREATE TABLE "Schools" (
 	"state" varchar(55),
 	"country" varchar(55),
 	PRIMARY KEY ("schoolID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for SeriesPost
@@ -438,7 +439,7 @@ CREATE TABLE "SeriesPost" (
 	"losses" int4,
 	"ties" int4,
 	PRIMARY KEY ("yearID", "round")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for Teams
@@ -494,7 +495,7 @@ CREATE TABLE "Teams" (
 	"teamIDlahman45" varchar(3),
 	"teamIDretro" varchar(3),
 	PRIMARY KEY ("yearID", "lgID", "teamID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for TeamsFranchises
@@ -506,7 +507,7 @@ CREATE TABLE "TeamsFranchises" (
 	"active" varchar(2),
 	"NAassoc" varchar(3),
 	PRIMARY KEY ("franchID")
-);
+) WITHOUT ROWID;
 
 -- ----------------------------
 --  Table structure for TeamsHalf
@@ -524,4 +525,4 @@ CREATE TABLE "TeamsHalf" (
 	"W" int4,
 	"L" int4,
 	PRIMARY KEY ("yearID", "teamID", "lgID", "Half")
-);
+) WITHOUT ROWID;
