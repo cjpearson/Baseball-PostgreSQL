@@ -255,6 +255,23 @@ CREATE TABLE "HallOfFame" (
 ) WITHOUT ROWID;
 
 -- ----------------------------
+--  Table structure for HomeGames
+-- ----------------------------
+DROP TABLE IF EXISTS "HomeGames";
+CREATE TABLE "HomeGames" (
+	"year.key" text NOT NULL,
+	"league.key" integer NOT NULL,
+	"team.key" text NOT NULL,
+	"park.key" integer,
+	"span.first" integer,
+	"span.last" integer,
+	"games" integer,
+	"openings" integer,
+	"attendance" integer,
+	PRIMARY KEY ("year.key", "team.key", "park.key")
+) WITHOUT ROWID;
+
+-- ----------------------------
 --  Table structure for Managers
 -- ----------------------------
 DROP TABLE IF EXISTS "Managers";
@@ -320,6 +337,20 @@ CREATE TABLE "Master" (
 	"retroID" text,
 	"bbrefID" text,
 	PRIMARY KEY ("playerID")
+) WITHOUT ROWID;
+
+-- ----------------------------
+--  Table structure for Parks
+-- ----------------------------
+DROP TABLE IF EXISTS "Parks";
+CREATE TABLE "Parks" (
+	"park.key" text,
+	"park.name" text,
+	"park.alias" text,
+	"city" text,
+	"state" text,
+	"country" text,
+	PRIMARY KEY ("park.key")
 ) WITHOUT ROWID;
 
 -- ----------------------------
