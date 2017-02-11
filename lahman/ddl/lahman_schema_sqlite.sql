@@ -3,14 +3,14 @@
 -- ----------------------------
 DROP TABLE IF EXISTS "AllstarFull";
 CREATE TABLE "AllstarFull" (
-	"playerID" varchar(9) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"gameNum" int4 NOT NULL,
-	"gameID" varchar(12),
-	"teamID" varchar(3),
-	"lgID" varchar(2),
-	"GP" int4,
-	"startingPos" int4,
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"gameNum" integer NOT NULL,
+	"gameID" text,
+	"teamID" text,
+	"lgID" text,
+	"GP" integer,
+	"startingPos" integer,
 	PRIMARY KEY ("playerID", "yearID", "gameNum")
 ) WITHOUT ROWID;
 
@@ -19,27 +19,27 @@ CREATE TABLE "AllstarFull" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Appearances";
 CREATE TABLE "Appearances" (
-	"yearID" int4 NOT NULL,
-	"teamID" varchar(3) NOT NULL,
-	"lgID" varchar(2),
-	"playerID" varchar(9) NOT NULL,
-	"G_all" int4,
-	"GS" int4,
-	"G_batting" int4,
-	"G_defense" int4,
-	"G_p" int4,
-	"G_c" int4,
-	"G_1b" int4,
-	"G_2b" int4,
-	"G_3b" int4,
-	"G_ss" int4,
-	"G_lf" int4,
-	"G_cf" int4,
-	"G_rf" int4,
-	"G_of" int4,
-	"G_dh" int4,
-	"G_ph" int4,
-	"G_pr" int4,
+	"yearID" integer NOT NULL,
+	"teamID" text NOT NULL,
+	"lgID" text,
+	"playerID" text NOT NULL,
+	"G_all" integer,
+	"GS" integer,
+	"G_batting" integer,
+	"G_defense" integer,
+	"G_p" integer,
+	"G_c" integer,
+	"G_1b" integer,
+	"G_2b" integer,
+	"G_3b" integer,
+	"G_ss" integer,
+	"G_lf" integer,
+	"G_cf" integer,
+	"G_rf" integer,
+	"G_of" integer,
+	"G_dh" integer,
+	"G_ph" integer,
+	"G_pr" integer,
 	PRIMARY KEY ("yearID", "teamID", "playerID")
 ) WITHOUT ROWID;
 
@@ -48,12 +48,12 @@ CREATE TABLE "Appearances" (
 -- ----------------------------
 DROP TABLE IF EXISTS "AwardsManagers";
 CREATE TABLE "AwardsManagers" (
-	"playerID" varchar(10) NOT NULL,
-	"awardID" varchar(75) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"lgID" varchar(2) NOT NULL,
-	"tie" varchar(1),
-	"notes" varchar(100),
+	"playerID" text NOT NULL,
+	"awardID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"lgID" text NOT NULL,
+	"tie" text,
+	"notes" text,
 	PRIMARY KEY ("yearID", "awardID", "lgID", "playerID")
 ) WITHOUT ROWID;
 
@@ -62,12 +62,12 @@ CREATE TABLE "AwardsManagers" (
 -- ----------------------------
 DROP TABLE IF EXISTS "AwardsPlayers";
 CREATE TABLE "AwardsPlayers" (
-	"playerID" varchar(9) NOT NULL,
-	"awardID" varchar(255) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"lgID" varchar(2) NOT NULL,
-	"tie" varchar(1),
-	"notes" varchar(100),
+	"playerID" text NOT NULL,
+	"awardID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"lgID" text NOT NULL,
+	"tie" text,
+	"notes" text,
 	PRIMARY KEY ("yearID", "awardID", "lgID", "playerID")
 ) WITHOUT ROWID;
 
@@ -76,13 +76,13 @@ CREATE TABLE "AwardsPlayers" (
 -- ----------------------------
 DROP TABLE IF EXISTS "AwardsShareManagers";
 CREATE TABLE "AwardsShareManagers" (
-	"awardID" varchar(25) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"lgID" varchar(2) NOT NULL,
-	"playerID" varchar(10) NOT NULL,
-	"pointsWon" int4,
-	"pointsMax" int4,
-	"votesFirst" int4,
+	"awardID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"lgID" text NOT NULL,
+	"playerID" text NOT NULL,
+	"pointegersWon" integer,
+	"pointegersMax" integer,
+	"votesFirst" integer,
 	PRIMARY KEY ("awardID", "yearID", "lgID", "playerID")
 ) WITHOUT ROWID;
 
@@ -91,13 +91,13 @@ CREATE TABLE "AwardsShareManagers" (
 -- ----------------------------
 DROP TABLE IF EXISTS "AwardsSharePlayers";
 CREATE TABLE "AwardsSharePlayers" (
-	"awardID" varchar(25) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"lgID" varchar(2) NOT NULL,
-	"playerID" varchar(9) NOT NULL,
-	"pointsWon" float8,
-	"pointsMax" int4,
-	"votesFirst" float8,
+	"awardID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"lgID" text NOT NULL,
+	"playerID" text NOT NULL,
+	"pointegersWon" real,
+	"pointegersMax" integer,
+	"votesFirst" real,
 	PRIMARY KEY ("awardID", "yearID", "lgID", "playerID")
 ) WITHOUT ROWID;
 
@@ -106,29 +106,29 @@ CREATE TABLE "AwardsSharePlayers" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Batting";
 CREATE TABLE "Batting" (
-	"playerID" varchar(9) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"stint" int4 NOT NULL,
-	"teamID" varchar(3),
-	"lgID" varchar(2),
-	"G" int4,
-	"AB" int4,
-	"R" int4,
-	"H" int4,
-	"2B" int4,
-	"3B" int4,
-	"HR" int4,
-	"RBI" int4,
-	"SB" int4,
-	"CS" int4,
-	"BB" int4,
-	"SO" int4,
-	"IBB" int4,
-	"HBP" int4,
-	"SH" int4,
-	"SF" int4,
-	"GIDP" int4,
-	PRIMARY KEY ("playerID", "yearID", "stint")
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"stinteger" integer NOT NULL,
+	"teamID" text,
+	"lgID" text,
+	"G" integer,
+	"AB" integer,
+	"R" integer,
+	"H" integer,
+	"2B" integer,
+	"3B" integer,
+	"HR" integer,
+	"RBI" integer,
+	"SB" integer,
+	"CS" integer,
+	"BB" integer,
+	"SO" integer,
+	"IBB" integer,
+	"HBP" integer,
+	"SH" integer,
+	"SF" integer,
+	"GIDP" integer,
+	PRIMARY KEY ("playerID", "yearID", "stinteger")
 ) WITHOUT ROWID;
 
 -- ----------------------------
@@ -136,28 +136,28 @@ CREATE TABLE "Batting" (
 -- ----------------------------
 DROP TABLE IF EXISTS "BattingPost";
 CREATE TABLE "BattingPost" (
-	"yearID" int4 NOT NULL,
-	"round" varchar(10) NOT NULL,
-	"playerID" varchar(9) NOT NULL,
-	"teamID" varchar(3),
-	"lgID" varchar(2),
-	"G" int4,
-	"AB" int4,
-	"R" int4,
-	"H" int4,
-	"2B" int4,
-	"3B" int4,
-	"HR" int4,
-	"RBI" int4,
-	"SB" int4,
-	"CS" int4,
-	"BB" int4,
-	"SO" int4,
-	"IBB" int4,
-	"HBP" int4,
-	"SH" int4,
-	"SF" int4,
-	"GIDP" int4,
+	"yearID" integer NOT NULL,
+	"round" text NOT NULL,
+	"playerID" text NOT NULL,
+	"teamID" text,
+	"lgID" text,
+	"G" integer,
+	"AB" integer,
+	"R" integer,
+	"H" integer,
+	"2B" integer,
+	"3B" integer,
+	"HR" integer,
+	"RBI" integer,
+	"SB" integer,
+	"CS" integer,
+	"BB" integer,
+	"SO" integer,
+	"IBB" integer,
+	"HBP" integer,
+	"SH" integer,
+	"SF" integer,
+	"GIDP" integer,
 	PRIMARY KEY ("yearID", "round", "playerID")
 ) WITHOUT ROWID;
 
@@ -166,9 +166,9 @@ CREATE TABLE "BattingPost" (
 -- ----------------------------
 DROP TABLE IF EXISTS "CollegePlaying";
 CREATE TABLE "CollegePlaying" (
-	"playerID" varchar(9),
-	"schoolID" varchar(15),
-	"yearID" int4,
+	"playerID" text,
+	"schoolID" text,
+	"yearID" integer,
 	PRIMARY KEY ("playerID", "schoolID", "yearID")
 ) WITHOUT ROWID;
 
@@ -177,25 +177,25 @@ CREATE TABLE "CollegePlaying" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Fielding";
 CREATE TABLE "Fielding" (
-	"playerID" varchar(9) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"stint" int4 NOT NULL,
-	"teamID" varchar(3),
-	"lgID" varchar(2),
-	"POS" varchar(2) NOT NULL,
-	"G" int4,
-	"GS" int4,
-	"InnOuts" int4,
-	"PO" int4,
-	"A" int4,
-	"E" int4,
-	"DP" int4,
-	"PB" int4,
-	"WP" int4,
-	"SB" int4,
-	"CS" int4,
-	"ZR" float8,
-	PRIMARY KEY ("playerID", "yearID", "stint", "POS")
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"stinteger" integer NOT NULL,
+	"teamID" text,
+	"lgID" text,
+	"POS" text NOT NULL,
+	"G" integer,
+	"GS" integer,
+	"InnOuts" integer,
+	"PO" integer,
+	"A" integer,
+	"E" integer,
+	"DP" integer,
+	"PB" integer,
+	"WP" integer,
+	"SB" integer,
+	"CS" integer,
+	"ZR" real,
+	PRIMARY KEY ("playerID", "yearID", "stinteger", "POS")
 ) WITHOUT ROWID;
 
 -- ----------------------------
@@ -203,13 +203,13 @@ CREATE TABLE "Fielding" (
 -- ----------------------------
 DROP TABLE IF EXISTS "FieldingOF";
 CREATE TABLE "FieldingOF" (
-	"playerID" varchar(9) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"stint" int4 NOT NULL,
-	"Glf" int4,
-	"Gcf" int4,
-	"Grf" int4,
-	PRIMARY KEY ("playerID", "yearID", "stint")
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"stinteger" integer NOT NULL,
+	"Glf" integer,
+	"Gcf" integer,
+	"Grf" integer,
+	PRIMARY KEY ("playerID", "yearID", "stinteger")
 ) WITHOUT ROWID;
 
 -- ----------------------------
@@ -217,23 +217,23 @@ CREATE TABLE "FieldingOF" (
 -- ----------------------------
 DROP TABLE IF EXISTS "FieldingPost";
 CREATE TABLE "FieldingPost" (
-	"playerID" varchar(9) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"teamID" varchar(3),
-	"lgID" varchar(2),
-	"round" varchar(10) NOT NULL,
-	"POS" varchar(2) NOT NULL,
-	"G" int4,
-	"GS" int4,
-	"InnOuts" int4,
-	"PO" int4,
-	"A" int4,
-	"E" int4,
-	"DP" int4,
-	"TP" int4,
-	"PB" int4,
-	"SB" int4,
-	"CS" int4,
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"teamID" text,
+	"lgID" text,
+	"round" text NOT NULL,
+	"POS" text NOT NULL,
+	"G" integer,
+	"GS" integer,
+	"InnOuts" integer,
+	"PO" integer,
+	"A" integer,
+	"E" integer,
+	"DP" integer,
+	"TP" integer,
+	"PB" integer,
+	"SB" integer,
+	"CS" integer,
 	PRIMARY KEY ("playerID", "yearID", "round", "POS")
 ) WITHOUT ROWID;
 
@@ -242,15 +242,15 @@ CREATE TABLE "FieldingPost" (
 -- ----------------------------
 DROP TABLE IF EXISTS "HallOfFame";
 CREATE TABLE "HallOfFame" (
-	"playerID" varchar(10) NOT NULL,
-	"yearid" int4 NOT NULL,
-	"votedBy" varchar(64) NOT NULL,
-	"ballots" int4,
-	"needed" int4,
-	"votes" int4,
-	"inducted" varchar(1),
-	"category" varchar(20),
-	"needed_note" varchar(25),
+	"playerID" text NOT NULL,
+	"yearid" integer NOT NULL,
+	"votedBy" text NOT NULL,
+	"ballots" integer,
+	"needed" integer,
+	"votes" integer,
+	"inducted" text,
+	"category" text,
+	"needed_note" text,
 	PRIMARY KEY ("playerID", "yearid", "votedBy")
 ) WITHOUT ROWID;
 
@@ -259,16 +259,16 @@ CREATE TABLE "HallOfFame" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Managers";
 CREATE TABLE "Managers" (
-	"playerID" varchar(10),
-	"yearID" int4 NOT NULL,
-	"teamID" varchar(3) NOT NULL,
-	"lgID" varchar(2),
-	"inseason" int4 NOT NULL,
-	"G" int4,
-	"W" int4,
-	"L" int4,
-	"rank" int4,
-	"plyrMgr" varchar(1),
+	"playerID" text,
+	"yearID" integer NOT NULL,
+	"teamID" text NOT NULL,
+	"lgID" text,
+	"inseason" integer NOT NULL,
+	"G" integer,
+	"W" integer,
+	"L" integer,
+	"rank" integer,
+	"plyrMgr" text,
 	PRIMARY KEY ("yearID", "teamID", "inseason")
 ) WITHOUT ROWID;
 
@@ -277,16 +277,16 @@ CREATE TABLE "Managers" (
 -- ----------------------------
 DROP TABLE IF EXISTS "ManagersHalf";
 CREATE TABLE "ManagersHalf" (
-	"playerID" varchar(10) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"teamID" varchar(3) NOT NULL,
-	"lgID" varchar(2),
-	"inseason" int4,
-	"half" int4 NOT NULL,
-	"G" int4,
-	"W" int4,
-	"L" int4,
-	"rank" int4,
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"teamID" text NOT NULL,
+	"lgID" text,
+	"inseason" integer,
+	"half" integer NOT NULL,
+	"G" integer,
+	"W" integer,
+	"L" integer,
+	"rank" integer,
 	PRIMARY KEY ("yearID", "teamID", "playerID", "half")
 ) WITHOUT ROWID;
 
@@ -295,30 +295,30 @@ CREATE TABLE "ManagersHalf" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Master";
 CREATE TABLE "Master" (
-	"playerID" varchar(10) NOT NULL,
-	"birthYear" int4,
-	"birthMonth" int4,
-	"birthDay" int4,
-	"birthCountry" varchar(50),
-	"birthState" varchar(2),
-	"birthCity" varchar(50),
-	"deathYear" int4,
-	"deathMonth" int4,
-	"deathDay" int4,
-	"deathCountry" varchar(50),
-	"deathState" varchar(2),
-	"deathCity" varchar(50),
-	"nameFirst" varchar(50),
-	"nameLast" varchar(50),
-	"nameGiven" varchar(255),
-	"weight" int4,
-	"height" float8,
-	"bats" varchar(1),
-	"throws" varchar(1),
+	"playerID" text NOT NULL,
+	"birthYear" integer,
+	"birthMonth" integer,
+	"birthDay" integer,
+	"birthCountry" text,
+	"birthState" text,
+	"birthCity" text,
+	"deathYear" integer,
+	"deathMonth" integer,
+	"deathDay" integer,
+	"deathCountry" text,
+	"deathState" text,
+	"deathCity" text,
+	"nameFirst" text,
+	"nameLast" text,
+	"nameGiven" text,
+	"weight" integer,
+	"height" real,
+	"bats" text,
+	"throws" text,
 	"debut" timestamp NULL,
 	"finalGame" timestamp NULL,
-	"retroID" varchar(9),
-	"bbrefID" varchar(9),
+	"retroID" text,
+	"bbrefID" text,
 	PRIMARY KEY ("playerID")
 ) WITHOUT ROWID;
 
@@ -327,37 +327,37 @@ CREATE TABLE "Master" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Pitching";
 CREATE TABLE "Pitching" (
-	"playerID" varchar(9) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"stint" int4 NOT NULL,
-	"teamID" varchar(3),
-	"lgID" varchar(2),
-	"W" int4,
-	"L" int4,
-	"G" int4,
-	"GS" int4,
-	"CG" int4,
-	"SHO" int4,
-	"SV" int4,
-	"IPouts" int4,
-	"H" int4,
-	"ER" int4,
-	"HR" int4,
-	"BB" int4,
-	"SO" int4,
-	"BAOpp" float8,
-	"ERA" float8,
-	"IBB" int4,
-	"WP" int4,
-	"HBP" int4,
-	"BK" int4,
-	"BFP" int4,
-	"GF" int4,
-	"R" int4,
-	"SH" int4,
-	"SF" int4,
-	"GIDP" int4,
-	PRIMARY KEY ("playerID", "yearID", "stint")
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"stinteger" integer NOT NULL,
+	"teamID" text,
+	"lgID" text,
+	"W" integer,
+	"L" integer,
+	"G" integer,
+	"GS" integer,
+	"CG" integer,
+	"SHO" integer,
+	"SV" integer,
+	"IPouts" integer,
+	"H" integer,
+	"ER" integer,
+	"HR" integer,
+	"BB" integer,
+	"SO" integer,
+	"BAOpp" real,
+	"ERA" real,
+	"IBB" integer,
+	"WP" integer,
+	"HBP" integer,
+	"BK" integer,
+	"BFP" integer,
+	"GF" integer,
+	"R" integer,
+	"SH" integer,
+	"SF" integer,
+	"GIDP" integer,
+	PRIMARY KEY ("playerID", "yearID", "stinteger")
 ) WITHOUT ROWID;
 
 -- ----------------------------
@@ -365,36 +365,36 @@ CREATE TABLE "Pitching" (
 -- ----------------------------
 DROP TABLE IF EXISTS "PitchingPost";
 CREATE TABLE "PitchingPost" (
-	"playerID" varchar(9) NOT NULL,
-	"yearID" int4 NOT NULL,
-	"round" varchar(10) NOT NULL,
-	"teamID" varchar(3),
-	"lgID" varchar(2),
-	"W" int4,
-	"L" int4,
-	"G" int4,
-	"GS" int4,
-	"CG" int4,
-	"SHO" int4,
-	"SV" int4,
-	"IPouts" int4,
-	"H" int4,
-	"ER" int4,
-	"HR" int4,
-	"BB" int4,
-	"SO" int4,
-	"BAOpp" float8,
-	"ERA" float8,
-	"IBB" int4,
-	"WP" int4,
-	"HBP" int4,
-	"BK" int4,
-	"BFP" int4,
-	"GF" int4,
-	"R" int4,
-	"SH" int4,
-	"SF" int4,
-	"GIDP" ,
+	"playerID" text NOT NULL,
+	"yearID" integer NOT NULL,
+	"round" text NOT NULL,
+	"teamID" text,
+	"lgID" text,
+	"W" integer,
+	"L" integer,
+	"G" integer,
+	"GS" integer,
+	"CG" integer,
+	"SHO" integer,
+	"SV" integer,
+	"IPouts" integer,
+	"H" integer,
+	"ER" integer,
+	"HR" integer,
+	"BB" integer,
+	"SO" integer,
+	"BAOpp" real,
+	"ERA" real,
+	"IBB" integer,
+	"WP" integer,
+	"HBP" integer,
+	"BK" integer,
+	"BFP" integer,
+	"GF" integer,
+	"R" integer,
+	"SH" integer,
+	"SF" integer,
+	"GIDP" integer,
 	PRIMARY KEY ("playerID", "yearID", "round")
 ) WITHOUT ROWID;
 
@@ -403,11 +403,11 @@ CREATE TABLE "PitchingPost" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Salaries";
 CREATE TABLE "Salaries" (
-	"yearID" int4 NOT NULL,
-	"teamID" varchar(3) NOT NULL,
-	"lgID" varchar(2) NOT NULL,
-	"playerID" varchar(9) NOT NULL,
-	"salary" float8,
+	"yearID" integer NOT NULL,
+	"teamID" text NOT NULL,
+	"lgID" text NOT NULL,
+	"playerID" text NOT NULL,
+	"salary" real,
 	PRIMARY KEY ("yearID", "teamID", "lgID", "playerID")
 ) WITHOUT ROWID;
 
@@ -416,11 +416,11 @@ CREATE TABLE "Salaries" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Schools";
 CREATE TABLE "Schools" (
-	"schoolID" varchar(15) NOT NULL,
-	"name_full" varchar(255),
-	"city" varchar(55),
-	"state" varchar(55),
-	"country" varchar(55),
+	"schoolID" text NOT NULL,
+	"name_full" text,
+	"city" text,
+	"state" text,
+	"country" text,
 	PRIMARY KEY ("schoolID")
 ) WITHOUT ROWID;
 
@@ -429,15 +429,15 @@ CREATE TABLE "Schools" (
 -- ----------------------------
 DROP TABLE IF EXISTS "SeriesPost";
 CREATE TABLE "SeriesPost" (
-	"yearID" int4 NOT NULL,
-	"round" varchar(5) NOT NULL,
-	"teamIDwinner" varchar(3),
-	"lgIDwinner" varchar(2),
-	"teamIDloser" varchar(3),
-	"lgIDloser" varchar(2),
-	"wins" int4,
-	"losses" int4,
-	"ties" int4,
+	"yearID" integer NOT NULL,
+	"round" text NOT NULL,
+	"teamIDwinner" text,
+	"lgIDwinner" text,
+	"teamIDloser" text,
+	"lgIDloser" text,
+	"wins" integer,
+	"losses" integer,
+	"ties" integer,
 	PRIMARY KEY ("yearID", "round")
 ) WITHOUT ROWID;
 
@@ -446,54 +446,54 @@ CREATE TABLE "SeriesPost" (
 -- ----------------------------
 DROP TABLE IF EXISTS "Teams";
 CREATE TABLE "Teams" (
-	"yearID" int4 NOT NULL,
-	"lgID" varchar(2) NOT NULL,
-	"teamID" varchar(3) NOT NULL,
-	"franchID" varchar(3),
-	"divID" varchar(1),
-	"Rank" int4,
-	"G" int4,
-	"Ghome" int4,
-	"W" int4,
-	"L" int4,
-	"DivWin" varchar(1),
-	"WCWin" varchar(1),
-	"LgWin" varchar(1),
-	"WSWin" varchar(1),
-	"R" int4,
-	"AB" int4,
-	"H" int4,
-	"2B" int4,
-	"3B" int4,
-	"HR" int4,
-	"BB" int4,
-	"SO" int4,
-	"SB" int4,
-	"CS" int4,
-	"HBP" int4,
-	"SF" int4,
-	"RA" int4,
-	"ER" int4,
-	"ERA" float8,
-	"CG" int4,
-	"SHO" int4,
-	"SV" int4,
-	"IPouts" int4,
-	"HA" int4,
-	"HRA" int4,
-	"BBA" int4,
-	"SOA" int4,
-	"E" int4,
-	"DP" int4,
-	"FP" float8,
-	"name" varchar(50),
-	"park" varchar(255),
-	"attendance" int4,
-	"BPF" int4,
-	"PPF" int4,
-	"teamIDBR" varchar(3),
-	"teamIDlahman45" varchar(3),
-	"teamIDretro" varchar(3),
+	"yearID" integer NOT NULL,
+	"lgID" text NOT NULL,
+	"teamID" text NOT NULL,
+	"franchID" text,
+	"divID" text,
+	"Rank" integer,
+	"G" integer,
+	"Ghome" integer,
+	"W" integer,
+	"L" integer,
+	"DivWin" text,
+	"WCWin" text,
+	"LgWin" text,
+	"WSWin" text,
+	"R" integer,
+	"AB" integer,
+	"H" integer,
+	"2B" integer,
+	"3B" integer,
+	"HR" integer,
+	"BB" integer,
+	"SO" integer,
+	"SB" integer,
+	"CS" integer,
+	"HBP" integer,
+	"SF" integer,
+	"RA" integer,
+	"ER" integer,
+	"ERA" real,
+	"CG" integer,
+	"SHO" integer,
+	"SV" integer,
+	"IPouts" integer,
+	"HA" integer,
+	"HRA" integer,
+	"BBA" integer,
+	"SOA" integer,
+	"E" integer,
+	"DP" integer,
+	"FP" real,
+	"name" text,
+	"park" text,
+	"attendance" integer,
+	"BPF" integer,
+	"PPF" integer,
+	"teamIDBR" text,
+	"teamIDlahman45" text,
+	"teamIDretro" text,
 	PRIMARY KEY ("yearID", "lgID", "teamID")
 ) WITHOUT ROWID;
 
@@ -502,10 +502,10 @@ CREATE TABLE "Teams" (
 -- ----------------------------
 DROP TABLE IF EXISTS "TeamsFranchises";
 CREATE TABLE "TeamsFranchises" (
-	"franchID" varchar(3) NOT NULL,
-	"franchName" varchar(50),
-	"active" varchar(2),
-	"NAassoc" varchar(3),
+	"franchID" text NOT NULL,
+	"franchName" text,
+	"active" text,
+	"NAassoc" text,
 	PRIMARY KEY ("franchID")
 ) WITHOUT ROWID;
 
@@ -514,15 +514,15 @@ CREATE TABLE "TeamsFranchises" (
 -- ----------------------------
 DROP TABLE IF EXISTS "TeamsHalf";
 CREATE TABLE "TeamsHalf" (
-	"yearID" int4 NOT NULL,
-	"lgID" varchar(2) NOT NULL,
-	"teamID" varchar(3) NOT NULL,
-	"Half" varchar(1) NOT NULL,
-	"divID" varchar(1),
-	"DivWin" varchar(1),
-	"Rank" int4,
-	"G" int4,
-	"W" int4,
-	"L" int4,
+	"yearID" integer NOT NULL,
+	"lgID" text NOT NULL,
+	"teamID" text NOT NULL,
+	"Half" text NOT NULL,
+	"divID" text,
+	"DivWin" text,
+	"Rank" integer,
+	"G" integer,
+	"W" integer,
+	"L" integer,
 	PRIMARY KEY ("yearID", "teamID", "lgID", "Half")
 ) WITHOUT ROWID;
