@@ -108,7 +108,7 @@ DROP TABLE IF EXISTS "Batting";
 CREATE TABLE "Batting" (
 	"playerID" text NOT NULL,
 	"yearID" integer NOT NULL,
-	"stinteger" integer NOT NULL,
+	"stint" integer NOT NULL,
 	"teamID" text,
 	"lgID" text,
 	"G" integer,
@@ -128,7 +128,7 @@ CREATE TABLE "Batting" (
 	"SH" integer,
 	"SF" integer,
 	"GIDP" integer,
-	PRIMARY KEY ("playerID", "yearID", "stinteger")
+	PRIMARY KEY ("playerID", "yearID", "stint")
 ) WITHOUT ROWID;
 
 -- ----------------------------
@@ -179,7 +179,7 @@ DROP TABLE IF EXISTS "Fielding";
 CREATE TABLE "Fielding" (
 	"playerID" text NOT NULL,
 	"yearID" integer NOT NULL,
-	"stinteger" integer NOT NULL,
+	"stint" integer NOT NULL,
 	"teamID" text,
 	"lgID" text,
 	"POS" text NOT NULL,
@@ -195,7 +195,7 @@ CREATE TABLE "Fielding" (
 	"SB" integer,
 	"CS" integer,
 	"ZR" real,
-	PRIMARY KEY ("playerID", "yearID", "stinteger", "POS")
+	PRIMARY KEY ("playerID", "yearID", "stint", "POS")
 ) WITHOUT ROWID;
 
 -- ----------------------------
@@ -205,11 +205,11 @@ DROP TABLE IF EXISTS "FieldingOF";
 CREATE TABLE "FieldingOF" (
 	"playerID" text NOT NULL,
 	"yearID" integer NOT NULL,
-	"stinteger" integer NOT NULL,
+	"stint" integer NOT NULL,
 	"Glf" integer,
 	"Gcf" integer,
 	"Grf" integer,
-	PRIMARY KEY ("playerID", "yearID", "stinteger")
+	PRIMARY KEY ("playerID", "yearID", "stint")
 ) WITHOUT ROWID;
 
 -- ----------------------------
@@ -360,7 +360,7 @@ DROP TABLE IF EXISTS "Pitching";
 CREATE TABLE "Pitching" (
 	"playerID" text NOT NULL,
 	"yearID" integer NOT NULL,
-	"stinteger" integer NOT NULL,
+	"stint" integer NOT NULL,
 	"teamID" text,
 	"lgID" text,
 	"W" integer,
@@ -388,7 +388,7 @@ CREATE TABLE "Pitching" (
 	"SH" integer,
 	"SF" integer,
 	"GIDP" integer,
-	PRIMARY KEY ("playerID", "yearID", "stinteger")
+	PRIMARY KEY ("playerID", "yearID", "stint")
 ) WITHOUT ROWID;
 
 -- ----------------------------
