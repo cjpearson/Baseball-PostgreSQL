@@ -278,10 +278,10 @@ CREATE TABLE "ManagersHalf" (
 );
 
 -- ----------------------------
---  Table structure for Master
+--  Table structure for People
 -- ----------------------------
-DROP TABLE IF EXISTS "Master";
-CREATE TABLE "Master" (
+DROP TABLE IF EXISTS "People";
+CREATE TABLE "People" (
 	"playerID" varchar(10) NOT NULL,
 	"birthYear" int4,
 	"birthMonth" int4,
@@ -576,9 +576,9 @@ ALTER TABLE "Managers" ADD PRIMARY KEY ("yearID", "teamID", "inseason") NOT DEFE
 ALTER TABLE "ManagersHalf" ADD PRIMARY KEY ("yearID", "teamID", "playerID", "half") NOT DEFERRABLE INITIALLY IMMEDIATE;
 
 -- ----------------------------
---  Primary key structure for table Master
+--  Primary key structure for table People
 -- ----------------------------
-ALTER TABLE "Master" ADD PRIMARY KEY ("playerID") NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE "People" ADD PRIMARY KEY ("playerID") NOT DEFERRABLE INITIALLY IMMEDIATE;
 
 -- ----------------------------
 --  Primary key structure for table Pitching

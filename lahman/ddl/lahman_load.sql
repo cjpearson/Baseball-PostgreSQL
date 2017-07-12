@@ -13,7 +13,7 @@ copy "FieldingPost" from '/path/to/FieldingPost.csv' with csv header;
 copy "HallOfFame" from '/path/to/HallOfFame.csv' with csv header;
 copy "Managers" from '/path/to/Managers.csv' with csv header;
 copy "ManagersHalf" from '/path/to/ManagersHalf.csv' with csv header;
-copy "Master" from '/path/to/Master.csv' with csv header;
+copy "People" from '/path/to/People.csv' with csv header;
 copy "Pitching" from '/path/to/Pitching.csv' with csv header;
 copy "PitchingPost" from '/path/to/PitchingPost.csv' with csv header;
 copy "Salaries" from '/path/to/Salaries.csv' with csv header;

@@ -15,7 +15,7 @@
 .import HomeGames.csv HomeGames
 .import Managers.csv Managers
 .import ManagersHalf.csv ManagersHalf
-.import Master.csv Master
+.import People.csv People
 .import Parks.csv Parks
 .import Pitching.csv Pitching
 .import PitchingPost.csv PitchingPost

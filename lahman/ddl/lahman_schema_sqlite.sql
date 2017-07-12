@@ -310,8 +310,8 @@ CREATE TABLE "ManagersHalf" (
 -- ----------------------------
 --  Table structure for Master
 -- ----------------------------
-DROP TABLE IF EXISTS "Master";
-CREATE TABLE "Master" (
+DROP TABLE IF EXISTS "People";
+CREATE TABLE "People" (
 	"playerID" text NOT NULL,
 	"birthYear" integer,
 	"birthMonth" integer,
